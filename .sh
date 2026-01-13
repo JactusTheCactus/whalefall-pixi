@@ -6,6 +6,6 @@ flag() {
 	done
 }
 make clean
-if make; then
+if make
 	then flag local && npm run preview
 fi
