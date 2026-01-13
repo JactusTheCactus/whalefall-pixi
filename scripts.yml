@@ -1,6 +1,6 @@
-dev: &d "vite"
-build: &b "tsc && vite build"
-preview: &p "vite preview"
+dev: &d vite
+build: &b tsc && vite build
+preview: &p vite preview
 d: *d
 b: *b
 p: *p
