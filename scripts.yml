@@ -1,0 +1,9 @@
+dev: &d "vite"
+build: &b "tsc && vite build"
+preview: &p "vite preview"
+d: *d
+b: *b
+p: *p
+bp:
+  - *b
+  - *p

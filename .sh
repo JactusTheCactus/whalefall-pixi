@@ -5,9 +5,9 @@ flag() {
 		do [[ -e ".flags/$f" ]] || return 1
 	done
 }
-if make; then
+make clean
+if make && flag local; then
 	if flag local
-		then npm run dev
-		else npm  run build
+		then npm run preview
 	fi
 fi
