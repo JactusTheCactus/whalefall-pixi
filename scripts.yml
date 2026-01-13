@@ -4,6 +4,4 @@ preview: &p vite preview
 d: *d
 b: *b
 p: *p
-bp:
-  - *b
-  - *p
+bp: [*b, *p]
