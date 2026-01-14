@@ -5,6 +5,6 @@ flag() {
 		do [[ -e ".flags/$f" ]] || return 1
 	done
 }
-flag local && make package.json && echo 'PACKAGE.JSON'
+flag local && make package.json
 make && echo 'MAKE'
-flag local && npm run preview && echo 'PREVIEW'
+flag local && npm run preview

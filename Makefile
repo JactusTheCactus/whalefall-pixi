@@ -6,7 +6,7 @@ PUG := $(shell find . -name "*.pug" ! -path "*/node_modules/*")
 HTML := $(patsubst %.pug,%.html,$(PUG))
 SCSS := $(shell find . -name "*.scss" ! -path "*/node_modules/*")
 CSS := $(patsubst %.scss,%.css,$(SCSS))
-all : $(HTML) $(CSS) $(JSON) dist
+all : $(HTML) $(CSS) dist
 package.json : scripts.yml
 	jq --argjson s "`
 		yq --yaml-fix-merge-anchor-to-spec=true \
