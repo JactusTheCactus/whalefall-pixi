@@ -1,0 +1,16 @@
+extends ../_.pug
+block body
+	#app
+		nav
+			.left: p
+				| Gold:#{"\u0020"}
+				span#gold
+			.center: p
+				| Miners:#{"\u0020"}
+				span#miners
+			.right: .card: button#play(type="button"): a(href="/") Quit
+		#game: button#buyminer(type="button") Buy Miner
+	script(
+		type="module"
+		src="/src/game.ts"
+	)

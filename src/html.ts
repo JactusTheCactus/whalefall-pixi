@@ -12,3 +12,14 @@ export function el<K extends keyof HTMLElementTagNameMap = "div">(
 	}
 	return node;
 }
+export function link(
+	label: string = "",
+	href: string = "/",
+	options: Partial<HTMLElementTagNameMap["button"]> = {}
+) {
+	return el(
+		undefined,
+		{ className: "card" },
+		el("button", options, el("a", { href: href }, label)),
+	);
+}
