@@ -6,5 +6,6 @@ flag() {
 	done
 }
 flag local && make package.json
-make && echo 'MAKE'
+flag local || make clean
+make
 flag local && npm run preview
