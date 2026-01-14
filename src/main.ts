@@ -21,7 +21,7 @@ document.querySelector<HTMLDivElement>("#app")!.appendChild(
 				alt: "TypeScript Logo",
 			})
 		),
-		el("h1", {}, "Vite + Typescript"),
+		el("h1", {}, "Vite + TypeScript"),
 		el(
 			undefined,
 			{ className: "card" },

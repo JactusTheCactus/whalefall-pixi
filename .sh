@@ -5,9 +5,6 @@ flag() {
 		do [[ -e ".flags/$f" ]] || return 1
 	done
 }
-make clean
-if make; then
-	# flag local && npm run preview
-	clear
-	jq '.scripts' "package.json"
-fi
+flag local && make package.json
+make
+flag local && npm run preview
