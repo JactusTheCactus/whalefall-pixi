@@ -3,6 +3,6 @@ set -euo pipefail
 flag="./scripts/flag.sh"
 if "$flag" local
 	then make package.json
-	else make clean
+	else make clear
 fi
 make
