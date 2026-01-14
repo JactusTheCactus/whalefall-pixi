@@ -8,14 +8,14 @@ SCSS := $(shell find . -name "*.scss" ! -path "*/node_modules/*")
 CSS := $(patsubst %.scss,%.css,$(SCSS))
 all : package.json $(HTML) $(CSS) $(JSON) dist
 package.json : scripts.yml
-	jq \
-		--argjson s "`
-			yq scripts.yml -o=json \
-			| jq -c 'map_values(if type == "array" then join(" && ") else . end)'
-		`" \
-		'.scripts = $$s' package.json \
-			> tmp.json \
-			&& mv tmp.json package.json
+	jq --argjson s "`
+		yq --yaml-fix-merge-anchor-to-spec=true \
+			scripts.yml -o=json \
+			| jq -f scripts.jq -c
+	`" \
+	'.scripts = $$s' package.json \
+		> tmp.json \
+		&& mv tmp.json package.json
 %.html : %.pug
 	npx pug3 $<
 %.css : %.scss
@@ -26,3 +26,4 @@ dist : src
 	npm run build
 clean :
 	rm -rf $(HTML) $(CSS)
+	touch scripts.yml

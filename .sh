@@ -6,6 +6,8 @@ flag() {
 	done
 }
 make clean
-if make
-	then flag local && npm run preview
+if make; then
+	# flag local && npm run preview
+	clear
+	jq '.scripts' "package.json"
 fi
