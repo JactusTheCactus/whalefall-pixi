@@ -1,13 +1,10 @@
-dev: &d
+dev: #&dev
   - vite
-build: &b
+build: &build
   - tsc
   - vite build
-preview: &p
+preview: &preview
   - vite preview
-d: *d
-b: *b
-p: *p
 bp:
-  - *b
-  - *p
+  - *build
+  - *preview

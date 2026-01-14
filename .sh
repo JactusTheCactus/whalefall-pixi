@@ -5,7 +5,11 @@ flag() {
 		do [[ -e ".flags/$f" ]] || return 1
 	done
 }
-flag local && make package.json
-flag local || make clean
+if flag local
+	then make package.json
+	else make clean
+fi
 make
-flag local && npm run preview
+if flag local
+	then npm run preview
+fi

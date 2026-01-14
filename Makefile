@@ -15,9 +15,7 @@ package.json : scripts.yml
 					--yaml-fix-merge-anchor-to-spec=true \
 					scripts.yml \
 					-o=json \
-					| jq \
-						-f scripts.jq \
-						-c
+					| jq -f scripts.jq
 			`" \
 			'.scripts = $$s' \
 			package.json \

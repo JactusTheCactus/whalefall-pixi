@@ -7,9 +7,6 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "d": "vite",
-    "b": "tsc && vite build",
-    "p": "vite preview",
     "bp": "{ tsc && vite build; } && vite preview"
   },
   "devDependencies": {
