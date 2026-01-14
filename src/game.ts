@@ -1,4 +1,4 @@
-import "./assets/style.css";
+//import "./assets/style.css";
 import Decimal from "break_eternity.js";
 jQuery(() => {
 	function fmt(x: Decimal) {
