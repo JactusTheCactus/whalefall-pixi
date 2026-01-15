@@ -3,7 +3,7 @@ block body
 	#app
 		nav
 			.left: p
-				| Gold:#{"\u0020"}
+				| $#{"\u0020"}
 				span#gold
 			.center: p
 				| Miners:#{"\u0020"}
@@ -12,8 +12,9 @@ block body
 		#game
 			button#buyminer(type="button") Buy Miner
 			br
-			i Cost: $
-			span#minercost
+			i
+				| Cost: $
+				span#minercost
 	script(
 		type="module"
 		src="index.ts"
