@@ -1,11 +1,6 @@
 extends _.pug
-block append head
-	link(
-		rel="stylesheet"
-		href="/src/assets/style.css"
-	)
 block body
 	#app
 		h1 Whalefall
 		img.logo(src="/vite.svg")
-		.card: button#play(type="button"): a(href="/game.html") Play
+		.card: button#play(type="button"): a(href="/game/index.html") Play

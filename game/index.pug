@@ -1,9 +1,4 @@
 extends ../_.pug
-block append head
-	link(
-		rel="stylesheet",
-		href="/src/assets/style.css"
-	)
 block body
 	#app
 		nav
@@ -14,8 +9,12 @@ block body
 				| Miners:#{"\u0020"}
 				span#miners
 			.right: .card: button#play(type="button"): a(href="/") Quit
-		#game: button#buyminer(type="button") Buy Miner
+		#game
+			button#buyminer(type="button") Buy Miner
+			br
+			i Cost: $
+			span#minercost
 	script(
 		type="module"
-		src="/src/game.ts"
+		src="index.ts"
 	)
